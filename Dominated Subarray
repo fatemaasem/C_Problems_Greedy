@@ -12,6 +12,7 @@
 using namespace std;
 int main() {
 	int t;
+	int y;
 	cin >> t;
 	while (t--) {
 		int n;
