@@ -1,0 +1,42 @@
+#include <iostream>
+#include <queue>
+#include <stack>
+#include <algorithm>
+#include<cstdio>
+#include<vector>
+#include<set>
+#include<map>
+#include<string>
+#include<cmath>
+#define ll long long 
+using namespace std;
+int main() {
+	int t;
+	cin >> t;
+	while (t--) {
+		int n;
+		cin >> n;
+		vector<int>v(n);
+		for (int i = 0; i < n; i++) {
+			cin >> v[i];
+		}
+		vector<int>ans(n + 1, -1);
+		
+		int small = 1e9;
+		bool b = false;
+		for (int j = 0; j < n; j++) {
+			
+			if (ans[v[j]] != -1) {
+				b = true;
+				
+				small = min(small, j-ans[v[j]]+1);
+			}
+			ans[v[j]] = j;
+		}
+		if (b==false)
+			cout << "-1\n";
+		else
+			cout << small << "\n";
+	}
+	
+}
