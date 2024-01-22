@@ -1,0 +1,39 @@
+#include <iostream>
+#include <queue>
+#include <stack>
+#include <algorithm>
+#include<cstdio>
+#include<vector>
+#include<set>
+#include<map>
+#include<string>
+#include<cmath>
+#define ll long long 
+using namespace std;
+int main() {
+	int t;
+	cin >> t;
+	while(t--){
+		int n;
+		cin >> n;
+	string s;
+	cin >> s;
+	string ss = "";
+	int sum = -1;
+	for (int i = 0; i < n; i++) {
+		int ch = s[i] - '0';
+		if (1 + ch != sum) {
+			sum = 1 + ch;
+			ss += '1';
+		}
+
+		else {
+			ss += '0';
+			sum = 0 + ch;
+		}
+
+
+	}
+	cout <<  ss << "\n";
+}
+}
