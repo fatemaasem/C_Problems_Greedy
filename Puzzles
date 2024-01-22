@@ -1,0 +1,57 @@
+#include <iostream>
+#include <queue>
+#include <stack>
+#include <algorithm>
+#include<cstdio>
+#include<vector>
+#include<set>
+#include<map>
+#include<string>
+#include<cmath>
+#define ll long long 
+using namespace std;
+
+////////////////////////////////////////////////////////////
+
+int main() {
+
+	int n;
+	int m;
+	cin >> n;
+	cin >> m;
+	set<int>s;
+	vector<int>v;
+	bool g = false;
+	int l = 1;
+	for (int i = 0; i < m; i++) {
+		int x;
+		cin >> x;
+		if (s.find(x) != s.end()) {
+			g = true;
+			l++;
+		}
+		if (g == false) {
+			s.insert(x);
+		}
+		
+		v.push_back(x);
+		
+	}
+	if (g&&l==n) {
+		cout << "0\n";
+	}
+	else {
+		sort(v.begin(), v.end());
+		
+		set<int>s;
+		int k = 0;
+		while (k+n-1 < m) {
+			s.insert(v[k + n - 1] - v[k]);
+			k++;
+		}
+		cout << (*s.begin());
+	}
+	
+
+	
+}
