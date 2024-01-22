@@ -1,0 +1,63 @@
+#include <iostream>
+#include <queue>
+#include <stack>
+#include <algorithm>
+#include<cstdio>
+#include<vector>
+#include<set>
+#include<map>
+#include<string>
+#include<cmath>
+#define ll long long 
+using namespace std;
+/*
+string s;
+bool valied(int x) {
+	bool v1 = false;
+	bool v2 = false;
+	for (int i = 0; i < x; i++) {
+		if (s[i] == '1') {
+			v1 = true;
+			break;
+		}
+	}
+	for (int j = x + 1; j < s.size(); j++) {
+		if (s[j] == '1') {
+			v2 = true;
+			break;
+		}
+	}
+	if()
+	if (v1 == true && v2 == true)
+		return true;
+	else
+		return false;
+}
+*/
+int main() {
+	string s;
+	cin >> s;
+	int p;
+	int i;
+	for (i = 0; i < s.size(); i++) {
+		if (s[i] == '0') {
+			p = i;
+			break;
+		}
+			
+	}
+	if (i < s.size()) {
+		for (int k = 0; k < p; k++) {
+			cout << s[k];
+		}
+		for (int j = p + 1; j < s.size(); j++)
+			cout << s[j];
+		cout << "\n";
+	}
+	else
+	{
+		s.pop_back();
+		cout << s << "\n";
+	}
+}
+C++
