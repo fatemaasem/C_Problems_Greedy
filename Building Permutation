@@ -1,0 +1,38 @@
+#include <iostream>
+#include <queue>
+#include <stack>
+#include <algorithm>
+#include<cstdio>
+#include<vector>
+#include<set>
+#include<map>
+#include<string>
+#include<cmath>
+#define ll long long 
+using namespace std;
+
+////////////////////////////////////////////////////////////
+
+int main() {
+	ll n;
+	cin >>n;
+	vector<ll>v;
+	for (ll i = 0; i < n; i++) {
+		ll x;
+		cin >> x;
+		v.push_back(x * -1);
+	}
+	sort(v.begin(), v.end());
+	
+	ll value = n;
+	ll sum = 0;
+	for (ll j = 0; j < n; j++) {
+		v[j] = v[j] * -1;
+		if (value > v[j])
+			sum += (value - v[j]);
+		else if (value < v[j])
+			sum += (v[j] - value);
+		value--;
+	}
+	cout << sum << "\n";
+}
